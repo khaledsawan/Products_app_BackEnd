@@ -28,7 +28,6 @@ Route::get('index',[ProductController::class,'index']);
 Route::middleware('auth:api')->group(function () {
     Route::get('get-user', [PassportAuthController::class, 'userInfo']);
     Route::get('userInfo', [PassportAuthController::class, 'userInfo']);
-    Route::post('store',[ProductController::class,'store']);
     Route::post('show',[ProductController::class,'show']);
     Route::post('destroy',[ProductController::class,'destroy']);
     Route::post('update',[ProductController::class,'update']);
@@ -37,6 +36,7 @@ Route::middleware('auth:api')->group(function () {
  //Route::resource('products', [ProductController::class]);
 
 });
+ Route::post('store',[ProductController::class,'store']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
