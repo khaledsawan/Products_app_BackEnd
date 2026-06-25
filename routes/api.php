@@ -32,11 +32,11 @@ Route::middleware('auth:api')->group(function () {
     Route::post('destroy',[ProductController::class,'destroy']);
     Route::post('update',[ProductController::class,'update']);
     Route::get('myProduct',[ProductController::class,'myProduct']);
-
+    Route::post('store',[ProductController::class,'store']);
  //Route::resource('products', [ProductController::class]);
 
 });
- Route::post('store',[ProductController::class,'store']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
